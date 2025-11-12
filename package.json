@@ -3,6 +3,7 @@
   "displayName": "demistify",
   "description": "language support in VS-Code for demis / dms-programms for Werth CMMs",
   "version": "0.0.1",
+  "publisher": "fisrub",
   "repository":"https://github.com/fisrub/demistify.git",
   "engines": {
     "vscode": "^1.94.0"
