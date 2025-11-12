@@ -1,0 +1,26 @@
+{
+  "name": "demistify",
+  "displayName": "demistify",
+  "description": "language support in VS-Code for demis / dms-programms for Werth CMMs",
+  "version": "0.0.1",
+  "repository":"https://github.com/fisrub/demistify.git",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "dmis",
+      "aliases": ["demis", "dmis", "dms"],
+      "extensions": [".dms"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "dmis",
+      "scopeName": "source.dms",
+      "path": "./syntaxes/dmis.tmLanguage.json"
+    }]
+  }
+}

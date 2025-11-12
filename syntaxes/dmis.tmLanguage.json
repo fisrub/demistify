@@ -1,0 +1,118 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "demis",
+	"patterns": [
+		{
+			"name":"comment.line.dmis",
+			"match": "\\$\\$.*"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#para"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#sqarebrackets"
+		},
+		{
+			"include": "#brackets"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.dmis",
+				"match": "\\b(<|[>]|BEFORE|BEGIN|CALL|DECISION|DIALOG|ELSE|END|ENDFIL|ENDIF|ENDMAC|EXECUTE|EXIT|FOR|HERE|IF|INCLUDE|INSERT|JUMPTO|MACRO|NEXT|ONCANCEL|ONERROR|ONTHEFLY|THEN|TO|WAIT)\\b\\s*/"
+			},
+			{
+				"name":"keyword.control.demis",
+				"match": "\\b(ENDMAC)\\b"
+			},
+			{
+				"name": "keyword.control.dmis",
+				"match": "\\b(THEN|ELSE)\\b\\s*,"
+			},
+			{
+				"name": "support.control",
+				"match": "\\b(DECL|FILE|SYSTEM|SNSLCT|SNSET|LET|CAD|IMAGE|GRAPIC|MENU|TEXT|OUTPUT|TOL|CONST|GOTO|GOTOAB|ROTNUL|ROTSET|INSERT|OPCUA)\\b\\s/"
+			},
+			{
+				"name": "support.control",
+				"match": "\\b(LITDEF)\\b\\s/"
+			},
+			{
+				"name": "support.control",
+				"match": "\\b(F|VF|VL|FA|FC|S|VA)\\b\\("
+			},
+			{
+				"name": "constant",
+				"match": "\\b(\\#MC|A-AXIS|B-AXIS|C-AXIS|COOR|CZ|CZSLCT|D|EQUATE|GOTAB|GOTO|LEFT|MNDST|NONE|RECALL|RIGHT|ROTAB|ROTATETO|ROTNUL|ROTORG|ROTSET|ROTTOT|SAVE|WKPLAN|XAXIS|XDIR|XNEG|XORIG|XPOS|XYPLAN|YAXIS|YDIR|YNEG|YORIG|YPOS|YZPLAN|ZAXIS|ZDIR|ZNEG|ZORIG|ZPOS|ZXPLAN|TIME)\\b"
+			},
+			{
+				"name": "constant.werth.demis",
+				"match": "\\b(TYPE|VERSION|DATE|TIME|MAJORVERSION|MINORVERSION|BV-VERSION|MC-VERSION|USER|TEACHEDIT|SENSORCHECK)\\b"
+			},
+			{ 
+				"name":"invalid",
+				"match": "invalid"
+			}
+		]},
+		"para":{
+			"patterns":[{
+				"name":"entity.control.dmis",
+				"match":"[$]\\w+"
+			}]
+			},
+		"strings": {
+			"name": "string.quoted.double.dmis",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dmis",
+					"match": "\\\\."
+				},
+				{
+					"include": "#para"
+				}
+			]
+		},
+		"sqarebrackets":{
+			"name":"markup.italic.markdown.dmis",
+			"begin":"\\[",
+			"end":"\\]",
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#para"
+				},
+				{
+					"include": "#self"
+				}
+			]
+		},
+		"brackets":{
+			"name":"markup.italic.demis",
+			"begin":"\\(",
+			"end":"\\)",
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#para"
+				},
+				{
+					"include": "#self"
+				}
+			]
+		}
+	},
+	"scopeName": "source.dms"
+}
