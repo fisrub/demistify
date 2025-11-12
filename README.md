@@ -29,3 +29,5 @@ Initial release of demistify
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
+* [Publish VS Code](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#vsce)
+* vsce package

@@ -11,6 +11,7 @@
   "categories": [
     "Programming Languages"
   ],
+  "icon": "icon/icon.png",
   "contributes": {
     "languages": [{
       "id": "dmis",
